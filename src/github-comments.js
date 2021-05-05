@@ -42,6 +42,11 @@ class GitHubComments {
 		h3.innerText = "Comments: " + comments.length;
 		this.target_el.appendChild( h3 );
 
+		let p = document.createElement( "p" );
+		p.className = "github-comments-issue";
+		p.innerHTML = `Leave a comment using <a href="${this.issue_url}">this GitHub issue</a>.`;
+		this.target_el.appendChild( p );
+
 		for ( const [ i, comment ] of Object.entries( comments ) ) {
 			let div = document.createElement( "div" );
 			div.className = "github-comments-container";
@@ -50,12 +55,10 @@ class GitHubComments {
 
 			div.innerHTML = `
 				<div class="github-comment">
-					<img src="${comment.user.avatar_url}" />
-					<span>
-						<a class="github-comment-author" href="${comment.user.html_url}">${comment.user.login}</a>
-						<br />
-						<span class="github-comment-date">${comment_date}</span>
-					</span>
+					<div class="github-comment-header">
+						<img class="github-avatar" alt="Avatar for ${comment.user.login}" src="${comment.user.avatar_url}" />
+						<a class="github-comment-author" href="${comment.user.html_url}">${comment.user.login}</a> <span class="github-comment-date">${comment_date}</span>
+					</div>
 					<div class="github-comment-content">
 						${comment.body_html}
 					</div>
