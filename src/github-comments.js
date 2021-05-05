@@ -51,13 +51,17 @@ class GitHubComments {
 			let div = document.createElement( "div" );
 			div.className = "github-comments-container";
 
-			let comment_date = new Date( comment.created_at );
+			let date = new Date( comment.created_at );
+			date = date.toDateString().match(
+				/^(\w{3}) (\w{3}) (\d{2}) (\d{4})$/
+			);
+			date = `${date[1]} ${date[3]} ${date[2]} ${date[4]}`;
 
 			div.innerHTML = `
 				<div class="github-comment">
 					<div class="github-comment-header">
 						<img class="github-avatar" alt="Avatar for ${comment.user.login}" src="${comment.user.avatar_url}" />
-						<a class="github-comment-author" href="${comment.user.html_url}">${comment.user.login}</a> <span class="github-comment-date">${comment_date}</span>
+						<a class="github-comment-author" href="${comment.user.html_url}">${comment.user.login}</a> <span class="github-comment-date">${date}</span>
 					</div>
 					<div class="github-comment-content">
 						${comment.body_html}
