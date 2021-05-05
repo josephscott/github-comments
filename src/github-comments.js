@@ -44,7 +44,7 @@ class GitHubComments {
 
 		let p = document.createElement( "p" );
 		p.className = "github-comments-issue";
-		p.innerHTML = `Leave a comment using <a href="${this.issue_url}">this GitHub issue</a>.`;
+		p.innerHTML = `Leave a comment using <a href="${this.issue_url}#issue-comment-box">this GitHub issue</a>.`;
 		this.target_el.appendChild( p );
 
 		for ( const [ i, comment ] of Object.entries( comments ) ) {
