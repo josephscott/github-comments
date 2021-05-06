@@ -1,0 +1,42 @@
+.github-comments-issue {
+	font-style: italic;
+}
+
+.github-comments-container {
+	margin: 0 0 1em 5em;
+}
+
+.github-comment {
+	border: 1px solid #c6e6ff;
+	border-radius: 0.3em;
+}
+
+.github-comment-header {
+	background-color: #f1f8ff;
+	border-bottom: 1px solid #c6e6ff;
+	color: #2f363d;
+	padding: 0.5em;
+}
+
+.github-avatar {
+	border-radius: 15%;
+	height: 46px;
+	left: 1.75em;
+	margin-right: 0.75em;
+	position: absolute;
+	width: 46px;
+}
+
+.github-comment-author {
+	color: #2f363d;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.github-comment-date {
+	margin-left: 0.3em;
+}
+
+.github-comment-content {
+	padding: 0.5em 0.5em 0.5em 1em;
+}
