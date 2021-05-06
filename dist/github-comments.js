@@ -59,8 +59,8 @@ class GitHubComments {
 
 			div.innerHTML = `
 				<div class="github-comment">
+					<img class="github-avatar" alt="Avatar for ${comment.user.login}" src="${comment.user.avatar_url}" />
 					<div class="github-comment-header">
-						<img class="github-avatar" alt="Avatar for ${comment.user.login}" src="${comment.user.avatar_url}" />
 						<a class="github-comment-author" href="${comment.user.html_url}">${comment.user.login}</a> <span class="github-comment-date">${date}</span>
 					</div>
 					<div class="github-comment-content">
