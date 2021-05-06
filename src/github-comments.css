@@ -3,7 +3,7 @@
 }
 
 .github-comments-container {
-	margin: 0 0 1em 5em;
+	margin: 1em 1em;
 }
 
 .github-comment {
@@ -20,10 +20,9 @@
 
 .github-avatar {
 	border-radius: 15%;
+	float: left;
 	height: 46px;
-	left: 1.75em;
 	margin-right: 0.75em;
-	position: absolute;
 	width: 46px;
 }
 
