@@ -1,4 +1,5 @@
-## GitHub Comments
+<h2>GitHub Comments</h2>
+<hr />
 
 <div id="comments"></div>
 
