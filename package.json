@@ -1,0 +1,18 @@
+{
+	"name": "github-comments",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/josephscott/github-comments.git"
+	},
+	"scripts": {
+		"dist": "cp -r src/* dist/ && npm run-script js && npm run-script css && npm run-script docs",
+		"js": "node_modules/terser/bin/terser --compress --mangle -- dist/github-comments.js > dist/github-comments.min.js",
+		"css": "node_modules/csso-cli/bin/csso dist/github-comments.css --output dist/github-comments.min.css",
+		"docs": "cp dist/*min* docs/"
+	},
+	"devDependencies": {
+		"terser": "5.6.1",
+		"csso-cli": "3.0.0"
+	}
+}
