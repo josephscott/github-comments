@@ -2,8 +2,8 @@
 'use strict';
 
 class GitHubComments {
-	constructor() {
-		this.script = document.currentScript;
+	constructor( ghc_script = document.currentScript ) {
+		this.script = ghc_script;
 		this.issue = this.script.dataset.ghissue;
 		this.target_el = document.querySelector( this.script.dataset.target );
 
@@ -74,7 +74,21 @@ class GitHubComments {
 	}
 }
 
-let _ghc = new GitHubComments();
-_ghc.add_comments();
+let _ghc = new GitHubComments( document.currentScript );
+
+if ( "IntersectionObserver" in window ) {
+	let obs_target = document.querySelector( document.currentScript.dataset.target );
+	let observer = new IntersectionObserver( ( element ) => {
+		element.forEach( ( el ) => {
+			if ( el.isIntersecting ) {
+				_ghc.add_comments();
+				observer.unobserve( obs_target );
+			}
+		} );
+	} );
+	observer.observe( obs_target );
+} else {
+	_ghc.add_comments();
+}
 
 })();
