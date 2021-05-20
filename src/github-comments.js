@@ -85,6 +85,8 @@ if ( "IntersectionObserver" in window ) {
 				observer.unobserve( obs_target );
 			}
 		} );
+	}, {
+		rootMargin: "500px"
 	} );
 	observer.observe( obs_target );
 } else {
